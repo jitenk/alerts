@@ -15,7 +15,6 @@
 /log/*.log
 /tmp
 
-
 .bundle
 db/*.sqlite3
 log/*.log
@@ -33,4 +32,6 @@ config/initializers/mail.rb
 config/application.yml
 .ruby-gemset
 .ruby-version
+.idea
 /vendor/*
+
