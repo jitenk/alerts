@@ -14,3 +14,23 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/**/*
+.DS_Store
+*/.DS_Store
+.rvmrc
+.rspec
+.project
+.sass-cache/
+.idea/
+config/database.yml
+config/environments/
+config/initializers/mail.rb
+config/application.yml
+.ruby-gemset
+.ruby-version
+/vendor/*
