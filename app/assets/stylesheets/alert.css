@@ -9,3 +9,7 @@ body{
 .dropdown {
     width: 160px;
 }
+
+.navbar-brand{
+    font-size: 25px;
+}
