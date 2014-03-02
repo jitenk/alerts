@@ -9,13 +9,13 @@
 <%end%>
 
   <div class="form-group"><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+  <%= f.email_field :email, :autofocus => true, class: 'form-control', style: 'width:250px;' %></div>
 
   <div class="form-group"><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+  <%= f.password_field :password, class: 'form-control', style: 'width:250px;' %></div>
 
   <div class="form-group"><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+  <%= f.password_field :password_confirmation, class: 'form-control', style: 'width:250px;' %></div>
 
   <div><%= f.submit "Sign up", :class => 'btn btn-default'%></div><br>
 <% end %>
