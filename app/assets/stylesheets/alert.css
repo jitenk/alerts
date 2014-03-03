@@ -6,6 +6,10 @@ body{
     padding: 0px;
 }
 
+.alert-danger{
+ width: 300px;
+}
+
 .dropdown {
     width: 160px;
 }
