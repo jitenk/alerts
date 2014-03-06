@@ -1,0 +1,1 @@
+ALERT_VERSION = YAML.load_file("#{Rails.root}/config/version.yml")

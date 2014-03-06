@@ -17,3 +17,13 @@ body{
 .navbar-brand{
     font-size: 25px;
 }
+
+.version_number {
+    background-image: url("/barcode_fancy.gif");
+    background-position: top center;
+    background-repeat: no-repeat;
+    padding-bottom: 12px;
+    padding-top: 32px;
+    text-align: center;
+    font-size: 10px;
+}

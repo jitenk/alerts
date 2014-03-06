@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Alert</title>
+  <title>Texas Alerts</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,6 +44,11 @@
 <p class="alert"><%= alert %></p>
 
 <%= yield %>
+
+<footer>
+  <br>
+  <p class="version_number"> Texas Alerts Version: <%= ALERT_VERSION["version"]%></p>
+</footer>
 
 </body>
 </html>
