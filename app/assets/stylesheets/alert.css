@@ -19,7 +19,7 @@ body{
 }
 
 .version_number {
-    background-image: url("/barcode_fancy.gif");
+    background-image: url("/assets/barcode_fancy.gif");
     background-position: top center;
     background-repeat: no-repeat;
     padding-bottom: 12px;
