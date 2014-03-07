@@ -2,14 +2,6 @@ body{
     height: 100%;
 }
 
-.alert{
-    padding: 0px;
-}
-
-.alert-danger{
- width: 300px;
-}
-
 .dropdown {
     width: 160px;
 }

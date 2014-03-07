@@ -9,10 +9,10 @@
 <body>
 
 <% if notice.present? %>
-    <p class="alert alert-info"><%= notice %></p>
+    <p class="alert alert-info" style="margin-left: auto; margin-right: auto; padding-top: 20px"><%= notice %></p>
 <% end %>
 <% if alert.present?%>
-    <p class="alert alert-danger"><%= alert %></p>
+    <p class="alert alert-info" style="margin-left: auto; margin-right: auto; padding-top: 20px"><%= alert %></p>
 <%end%>
 <%= yield %>
 
