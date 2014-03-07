@@ -46,4 +46,10 @@ p {
     margin: 0 0 0px;
 }
 
+.container-fluid{
+    width: 650px;
+    margin: auto;
+    margin-top: 20px
+}
+
 
