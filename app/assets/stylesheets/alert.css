@@ -2,14 +2,11 @@ body{
     height: 100%;
 }
 
-.dropdown {
-    width: 160px;
-}
-
 .navbar-brand{
     font-size: 25px;
 }
 
+/*Barcode bottom at footer*/
 .version_number {
     background-image: url("/assets/barcode_fancy.gif");
     background-position: top center;
