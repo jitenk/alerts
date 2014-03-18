@@ -1,0 +1,23 @@
+<div class="container">
+
+<p class="alert-info"><%= notice %></p> <br>
+
+<p>
+  <strong>Name:</strong>
+  <%= @alert_type.name %>
+</p>  <br>
+
+<p>
+    <strong>Questions:</strong>
+</p>  <br>
+<%@alert_type.questions.map do |question|%>
+<p>
+  <strong><%=question.order %>.</strong>
+  <%= question.detail %>
+</p>  <br>
+<%end%>
+
+  <%= link_to 'Edit', edit_alert_type_path(@alert_type) %> |
+<%= link_to 'Back', alert_types_path %>
+
+</div>

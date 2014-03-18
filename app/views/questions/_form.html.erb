@@ -1,0 +1,31 @@
+<div class="container">
+    <%= form_for(@question) do |f| %>
+      <% if @question.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
+
+          <ul>
+          <% @question.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="form-group">
+        <%= f.label :order %><br>
+        <%= f.text_field :order, class:'form-control input-normal'%>
+      </div>
+      <div class="form-group">
+        <%= f.label :detail %><br>
+        <%= f.text_field :detail, class:'form-control input-normal'%>
+      </div>
+      <div class="form-group">
+        <%= f.label :alert_type_id, 'Alert Type Name' %><br>
+        <%= f.text_field :alert_type_id, :value => @question.alert_type.name, :disabled => true, class:'form-control input-normal'%>
+      </div>
+      <div class="form-group">
+        <%= f.submit class:'btn btn-default'%>
+      </div>
+    <% end %>
+</div>

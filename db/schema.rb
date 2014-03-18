@@ -11,10 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140227174819) do
+ActiveRecord::Schema.define(version: 20140314203125) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "alert_types", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "questions", force: true do |t|
+    t.integer  "order"
+    t.text     "detail"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "alert_type_id"
+  end
+
+  add_index "questions", ["alert_type_id"], name: "index_questions_on_alert_type_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

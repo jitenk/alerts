@@ -1,0 +1,22 @@
+<div class="container">
+
+<p class="alert-info"><%= notice %></p><br>
+
+<p class="form-group">
+  <strong>Order:</strong>
+  <%= @question.order %>
+</p>
+
+<p class="form-group">
+  <strong>Detail:</strong>
+  <%= @question.detail %>
+</p>
+
+<p class="form-group">
+  <strong>Alert Type Name:</strong>
+  <%= @question.alert_type.name %>
+</p>
+
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Back', questions_path %>
+</div>

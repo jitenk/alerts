@@ -61,11 +61,12 @@
     </div>
   </div>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<% if (flash[:error] || flash[:notice] || flash[:alert])%>
+  <p class="alert-info"><%= flash[:error] || flash[:notice] || flash[:alert] %> </p>
+<% end %>
 
-  <!-- Begin page content -->
-  <div class="container" style="margin-bottom: 50px">
+  <!-- Begin page content this is margin for overlapping of header and footer.  -->
+  <div class="container" style="margin-bottom: 50px; margin-top: 60px">
 
 <%= yield %>
 

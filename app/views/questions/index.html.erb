@@ -1,0 +1,40 @@
+<div class="container">
+
+<h3>Questions</h3>
+
+<div class="container">
+
+<% if @questions.count > 0 %>
+<table class="table table-hover table-bordered table-responsive">
+  <thead>
+    <tr>
+      <th>Order</th>
+      <th>Detail</th>
+      <th>Alert Type Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+        <td><%= question.order %></td>
+        <td><%= question.detail %></td>
+        <td><%= question.alert_type.name %></td>
+        <td><%= link_to 'Show', question %></td>
+        <td><%= link_to 'Edit', edit_question_path(question) %></td>
+        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+  <% else %>
+      <div class="alert alert-danger">No Question Found</div>
+  <% end %>
+<br>
+
+</div>
+
+<%= link_to 'New Question', new_question_path %>
+
+</div>
