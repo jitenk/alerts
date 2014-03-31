@@ -1,3 +1,9 @@
+<script type="text/javascript">
+    var RecaptchaOptions = {
+        theme : 'clean'
+    };
+</script>
+
 <div class="container-fluid">
 
     <div class="panel panel-default">
@@ -14,19 +20,108 @@
                   </div>
                 <%end%>
 
-                  <div class="form-group"><%= f.label :email %><br />
+                  <h3>User Information</h3><br>
+
+                  <div class="form-group">
+                    <span style="color:red;padding-right:3px;">*</span>
+                    <%= f.label 'First Name' %><br />
+                  <%= f.text_field :first_name, :autofocus => true, class: 'form-control', style: 'width:250px;' %></div>
+
+                  <div class="form-group">
+                    <span style="color:red;padding-right:3px;">*</span>
+                    <%= f.label 'Last Name' %><br />
+                  <%= f.text_field :last_name, :autofocus => true, class: 'form-control', style: 'width:250px;' %></div>
+
+                  <div class="form-group"><%= f.label :title %><br />
+                  <%= f.text_field :title, :autofocus => true, class: 'form-control', style: 'width:250px;' %></div>
+
+
+                    <div class="form-group">
+                      <span style="color:red;padding-right:3px;">*</span>
+                      <%= f.label 'Email' %><br />
                   <%= f.email_field :email, :autofocus => true, class: 'form-control', style: 'width:250px;' %></div>
 
-                  <div class="form-group"><%= f.label :password %><br />
+                  <div class="form-group">
+                    <span style="color:red;padding-right:3px;">*</span>
+                    <%= f.label 'Password' %><br />
                   <%= f.password_field :password, class: 'form-control', style: 'width:250px;' %></div>
 
-                  <div class="form-group"><%= f.label :password_confirmation %><br />
+                  <div class="form-group">
+                    <span style="color:red;padding-right:3px;">*</span>
+                    <%= f.label 'Password Confirmation' %><br />
                   <%= f.password_field :password_confirmation, class: 'form-control', style: 'width:250px;' %></div>
 
-                  <div><%= f.submit "Sign up", :class => 'btn btn-default'%></div><br>
+                  <div class="form-group">
+                    <span style="color:red;padding-right:3px;">*</span>
+                    <%= f.label 'Agency ORI' %><br />
+                  <%= f.text_field :agency_ori, class: 'form-control', style: 'width:250px;' %></div>
+
+                    <hr>
+                    <h3>Address</h3><br>
+
+                    <div class="form-group">
+                      <span style="color:red;padding-right:3px;">*</span>
+                      <%= f.label 'Address 1' %><br />
+                      <%= f.text_field :address1, class: 'form-control', style: 'width:250px;' %></div>
+
+                    <div class="form-group"><%= f.label 'Address 2' %><br />
+                      <%= f.text_field :address2, class: 'form-control', style: 'width:250px;' %></div>
+
+                    <div class="form-group">
+                      <span style="color:red;padding-right:3px;">*</span>
+                      <%= f.label 'City' %><br />
+                      <%= f.text_field :city, class: 'form-control', style: 'width:250px;' %></div>
+
+                    <div class="form-group">
+                      <span style="color:red;padding-right:3px;">*</span>
+                      <%= f.label 'State' %><br />
+                      <%= f.text_field :state, class: 'form-control', style: 'width:250px;' %></div>
+
+                    <div class="form-group">
+                      <span style="color:red;padding-right:3px;">*</span>
+                      <%= f.label 'Zip' %><br />
+                      <%= f.text_field :zip, class: 'form-control', style: 'width:250px;' %></div>
+
+                    <hr>
+                    <h3>Contact Information</h3><br>
+
+                    <div class="form-group">
+                      <span style="color:red;padding-right:3px;">*</span>
+                      <%= f.label 'Phone' %><br />
+                      <%= f.text_field :phone, class: 'form-control', style: 'width:250px;' %></div>
+
+                    <div class="form-group"><%= f.label :alt_phone %><br />
+                      <%= f.text_field :alt_phone, class: 'form-control', style: 'width:250px;' %></div>
+
+                    <div class="form-group"><%= f.label :fax %><br />
+                      <%= f.text_field :fax, class: 'form-control', style: 'width:250px;' %></div>
+
+                    <hr>
+                    <h3>Disclaimer and Security</h3>
+
+                    <div style="padding: 10px;border:solid 1px #E5E5E5;margin:5px;">In order to create, upload, issue, or otherwise disseminate alert
+                      flyers using this system, the local law enforcement agency understands and agrees to the following:<br>
+                      <br>In order to create a local alert flyer, it is acknowledged by the local law enforcement agency that all state criteria have
+                      been met before listing.  Alert flyers issued by local law enforcement agencies are not reviewed by the Texas Department of Public Safety (DPS)
+                      and are considered the full and complete responsibility of the issuing agency.  By choosing to distribute the alert flyer notification
+                      to subscribers, the issuing agency agrees to hold harmless DPS, its employees, officers and agents regarding any and all alert transactions
+                      performed on this system by said local law enforcement agency.  <br><br>
+                      <a href="#" onclick="window.open('/LEA_user_agreement.pdf', '_blank', 'location=1,status=1,scrollbars=1,width=800,height=800'); return false;">
+
+                        View
+                      </a>
+                      Alert System User Agreement <br><br>
+
+                      <%= check_box_tag :agree, {checked:false} %> I Agree
+                    </div><br>
+                    <%= recaptcha_tags %><br>
+
+                    <div><%= f.submit "Sign up", :class => 'btn btn-default'%></div><br>
                 <% end %>
 
-                <%= render "devise/shared/links" %>
+                <%= render "devise/shared/links" %> <br>
+
+                <span style="color:red;padding-right:3px;">*</span> indicates a required field
 
               </div>
 
