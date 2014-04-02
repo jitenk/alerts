@@ -1,35 +1,106 @@
+<!-- EDIT MY PROFILE PAGE -->
+
 <div class="container-fluid">
     <div class="panel panel-default">
 
-      <div class="panel-heading"><h2>Edit <%= resource_name.to_s.humanize %></h2></div>
+      <div class="panel-heading"><h2>Edit my profile </h2></div>
 
       <div class="panel-body">
 
-
-
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-      <%= devise_error_messages! %>
+        <div class="alert alert-warning">
+          <%= devise_error_messages! %>
+        </div>
 
-      <div class="form-group"><%= f.label :email %><br />
+    <h3>User Information</h3><br>
+
+    <div class="form-group">
+      <span style="color:red;padding-right:3px;">*</span>
+      <%= f.label 'First Name' %><br />
+      <%= f.text_field :first_name, :autofocus => true, class: 'form-control', style: 'width:250px;' %></div>
+
+    <div class="form-group">
+      <span style="color:red;padding-right:3px;">*</span>
+      <%= f.label 'Last Name' %><br />
+      <%= f.text_field :last_name, :autofocus => true, class: 'form-control', style: 'width:250px;' %></div>
+
+    <div class="form-group"><%= f.label :title %><br />
+      <%= f.text_field :title, :autofocus => true, class: 'form-control', style: 'width:250px;' %></div>
+
+      <div class="form-group">
+        <span style="color:red;padding-right:3px;">*</span>
+        <%= f.label 'Email' %><br />
       <%= f.email_field :email, :autofocus => true , class: 'form-control', style: 'width:250px;'%></div>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>
 
-      <div class="form-group"><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+      <div class="form-group">
+        <%= f.label 'Password' %> <i>(leave blank if you don't want to change it)</i><br />
       <%= f.password_field :password, :autocomplete => "off" , class: 'form-control', style: 'width:250px;'%></div>
 
-      <div class="form-group"><%= f.label :password_confirmation %><br />
+      <div class="form-group">
+        <%= f.label :password_confirmation %><i> (leave blank if you don't want to change it) </i><br />
       <%= f.password_field :password_confirmation, class: 'form-control', style: 'width:250px;' %></div>
 
       <div class="form-group"><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
       <%= f.password_field :current_password, class: 'form-control', style: 'width:250px;' %></div>
 
-      <div><%= f.submit "Update", :class => 'btn btn-default' %></div>
+    <div class="form-group">
+      <span style="color:red;padding-right:3px;">*</span>
+      <%= f.label 'Agency ORI' %><br />
+      <%= f.text_field :agency_ori, class: 'form-control', style: 'width:250px;' %></div>
+
+
+
+    <hr>
+    <h3>Address</h3><br>
+
+    <div class="form-group">
+      <span style="color:red;padding-right:3px;">*</span>
+      <%= f.label 'Address 1' %><br />
+      <%= f.text_field :address1, class: 'form-control', style: 'width:250px;' %></div>
+
+    <div class="form-group"><%= f.label 'Address 2' %><br />
+      <%= f.text_field :address2, class: 'form-control', style: 'width:250px;' %></div>
+
+    <div class="form-group">
+      <span style="color:red;padding-right:3px;">*</span>
+      <%= f.label 'City' %><br />
+      <%= f.text_field :city, class: 'form-control', style: 'width:250px;' %></div>
+
+    <div class="form-group">
+      <span style="color:red;padding-right:3px;">*</span>
+      <%= f.label 'State' %><br />
+      <%= f.text_field :state, class: 'form-control', style: 'width:250px;' %></div>
+
+    <div class="form-group">
+      <span style="color:red;padding-right:3px;">*</span>
+      <%= f.label 'Zip' %><br />
+      <%= f.text_field :zip, class: 'form-control', style: 'width:250px;' %></div>
+
+    <hr>
+    <h3>Contact Information</h3><br>
+
+    <div class="form-group">
+      <span style="color:red;padding-right:3px;">*</span>
+      <%= f.label 'Phone' %><br />
+      <%= f.text_field :phone, class: 'form-control', style: 'width:250px;' %></div>
+
+    <div class="form-group"><%= f.label :alt_phone %><br />
+      <%= f.text_field :alt_phone, class: 'form-control', style: 'width:250px;' %></div>
+
+    <div class="form-group"><%= f.label :fax %><br />
+      <%= f.text_field :fax, class: 'form-control', style: 'width:250px;' %></div>
+
+
+            <div><%= f.submit "Update", :class => 'btn btn-default' %></div>
     <% end %>
      <br>
-    <%= link_to "Back", :back %>
+    <%= link_to "Back", :back %><br><br>
+
+        <span style="color:red;padding-right:3px;">*</span> indicates a required field
 
       </div>
 
