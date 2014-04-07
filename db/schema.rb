@@ -11,12 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140331163123) do
+ActiveRecord::Schema.define(version: 20140407170915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "alert_types", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "alerts", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -32,13 +38,25 @@ ActiveRecord::Schema.define(version: 20140331163123) do
 
   add_index "questions", ["alert_type_id"], name: "index_questions_on_alert_type_id", using: :btree
 
+  create_table "suspects", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "gender"
+    t.string   "hair_color"
+    t.date     "birth_date"
+    t.string   "eye_color"
+    t.string   "race"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -57,9 +75,35 @@ ActiveRecord::Schema.define(version: 20140331163123) do
     t.string   "phone"
     t.string   "alt_phone"
     t.string   "fax"
+    t.boolean  "admin",                  default: false
+    t.boolean  "approved",               default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "vehicles", force: true do |t|
+    t.string   "make"
+    t.string   "model"
+    t.string   "style"
+    t.integer  "year"
+    t.string   "color"
+    t.string   "license_plate_number"
+    t.string   "license_pate_state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "victims", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "gender"
+    t.string   "hair_color"
+    t.date     "birth_date"
+    t.string   "eye_color"
+    t.string   "race"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
