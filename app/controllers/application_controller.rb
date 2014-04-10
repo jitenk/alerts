@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
 
   def current_user_is_approved
     unless current_user && current_user.approved
-      redirect_to request_approval_path
+      render text: "SOC will notify you once you have been approved.".html_safe, :layout => false
     end
   end
 
