@@ -38,18 +38,6 @@ ActiveRecord::Schema.define(version: 20140407170915) do
 
   add_index "questions", ["alert_type_id"], name: "index_questions_on_alert_type_id", using: :btree
 
-  create_table "suspects", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "gender"
-    t.string   "hair_color"
-    t.date     "birth_date"
-    t.string   "eye_color"
-    t.string   "race"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
@@ -90,18 +78,6 @@ ActiveRecord::Schema.define(version: 20140407170915) do
     t.string   "color"
     t.string   "license_plate_number"
     t.string   "license_pate_state"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "victims", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "gender"
-    t.string   "hair_color"
-    t.date     "birth_date"
-    t.string   "eye_color"
-    t.string   "race"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
