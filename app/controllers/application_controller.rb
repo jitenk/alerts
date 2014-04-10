@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_filter :update_sanitized_params, if: :devise_controller?
+  before_filter :current_user_is_approved
   layout :layout_by_resource
 
   def set_mailer_host
@@ -19,9 +20,16 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def current_user_is_approved
+    unless current_user && current_user.approved
+      redirect_to request_approval_path
+    end
+  end
+
   #accept additional attribute for user table
   def update_sanitized_params
-    devise_parameter_sanitizer.for(:sign_up) {|u| u.permit(:email, :password, :password_confirmation, :last_name, :first_name, :title, :agency_ori, :address1, :address2, :city, :state, :zip, :phone, :alt_phone, :fax)}
+    devise_parameter_sanitizer.for(:sign_up) {|u| u.permit(:email, :password, :password_confirmation, :last_name, :first_name, :title, :agency_ori, :address1, :address2, :city, :state, :zip, :phone, :alt_phone, :fax, :admin, :approved)}
+    devise_parameter_sanitizer.for(:account_update) {|u| u.permit(:email, :password, :password_confirmation, :current_password, :last_name, :first_name, :title, :agency_ori, :address1, :address2, :city, :state, :zip, :phone, :alt_phone, :fax, :admin, :approved)}
   end
 
 end

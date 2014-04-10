@@ -14,4 +14,16 @@ class User < ActiveRecord::Base
   #  end
   #end
 
+  def full_name
+    if self.first_name && self.last_name
+      "#{self.first_name} #{self.last_name}"
+    elsif self.first_name.present?
+      "#{self.first_name}"
+    elsif self.last_name.present?
+      "#{self.last_name}"
+    else
+      "No Name"
+    end
+  end
+
 end

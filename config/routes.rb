@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :alerts
-
   devise_for :users, :controllers => {:registrations => "registrations"}
   #get 'welcome/index'
 
@@ -10,6 +8,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'alerts#index'
 
+  get 'request_approval', to: redirect('/request_approval.html')
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -17,9 +17,11 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-     resources :alert_types, :questions, :alerts
+  resources :alerts
 
-  #devise_for :users, :controllers => {:registrations => "registrations"}
+  namespace :console do
+    resources :alert_types, :questions
+  end
 
   # Example resource route with options:
   #   resources :products do
