@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 20140410182515) do
     t.string   "eye_color"
     t.string   "race"
     t.string   "type"
+    t.integer  "age"
+    t.string   "age_unit"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

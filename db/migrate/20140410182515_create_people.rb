@@ -12,6 +12,8 @@ class CreatePeople < ActiveRecord::Migration
       t.string :eye_color
       t.string :race
       t.string :type
+      t.integer :age
+      t.string :age_unit
 
       t.timestamps
     end
