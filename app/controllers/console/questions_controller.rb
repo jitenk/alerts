@@ -30,7 +30,7 @@ class Console::QuestionsController < Console::BaseController
 
     respond_to do |format|
       if @question.save
-        format.html { redirect_to @question, notice: 'Question was successfully created.' }
+        format.html { redirect_to console_question_url(@question), notice: 'Question was successfully created.' }
         format.json { render action: 'show', status: :created, location: @question }
       else
         format.html { render action: 'new' }
@@ -44,7 +44,7 @@ class Console::QuestionsController < Console::BaseController
   def update
     respond_to do |format|
       if @question.update(question_params)
-        format.html { redirect_to @question, notice: 'Question was successfully updated.' }
+        format.html { redirect_to console_questions_url, notice: 'Question was successfully updated.' }
         format.json { render action: 'show', status: :ok, location: @question }
       else
         format.html { render action: 'edit' }
@@ -58,7 +58,7 @@ class Console::QuestionsController < Console::BaseController
   def destroy
     @question.destroy
     respond_to do |format|
-      format.html { redirect_to questions_url }
+      format.html { redirect_to console_questions_url }
       format.json { head :no_content }
     end
   end

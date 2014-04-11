@@ -28,7 +28,7 @@ class Console::UsersController < Console::BaseController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to console_users_url, notice: 'User was successfully created.' }
         format.json { render action: 'show', status: :created, location: @user }
       else
         format.html { render action: 'new' }
@@ -40,9 +40,15 @@ class Console::UsersController < Console::BaseController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    if current_user.email == params[:user][:email]
+      flash[:error] = "You cannot edit your own profile"
+      redirect_to console_users_url
+      return
+    end
+
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to console_users_url, notice: 'User was successfully updated.' }
         format.json { render action: 'show', status: :ok, location: @user }
       else
         format.html { render action: 'edit' }
@@ -56,7 +62,7 @@ class Console::UsersController < Console::BaseController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url }
+      format.html { redirect_to console_users_url }
       format.json { head :no_content }
     end
   end

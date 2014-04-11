@@ -83,6 +83,14 @@
           <div class="form-group"><%= f.label :fax %><br />
             <%= f.text_field :fax, class: 'form-control', style: 'width:250px;' %></div>
 
+          <hr>
+          <h3>Admin Task</h3><br>
+
+          <div class="form-group"><%= f.label :approved %>:
+            <%= f.check_box :approved %></div>
+
+          <div class="form-group"><%= f.label :admin %>:
+            <%= f.check_box :admin %></div>
 
           <div><%= f.submit "Update", :class => 'btn btn-default' %></div>
       <% end %>

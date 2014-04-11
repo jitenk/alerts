@@ -8,9 +8,9 @@
       <div class="panel-body">
 
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-        <div class="alert alert-warning">
+      <% if !resource.errors.empty? %>
           <%= devise_error_messages! %>
-        </div>
+      <% end %>
 
     <h3>User Information</h3><br>
 

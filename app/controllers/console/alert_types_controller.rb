@@ -32,7 +32,7 @@ class Console::AlertTypesController < Console::BaseController
 
     respond_to do |format|
       if @alert_type.save
-        format.html { redirect_to @alert_type, notice: 'Alert type was successfully created.' }
+        format.html { redirect_to console_alert_type_url(@alert_type), notice: 'Alert type was successfully created.' }
         format.json { render action: 'show', status: :created, location: @alert_type }
       else
         format.html { render action: 'new' }
@@ -46,7 +46,7 @@ class Console::AlertTypesController < Console::BaseController
   def update
     respond_to do |format|
       if @alert_type.update(alert_type_params)
-        format.html { redirect_to @alert_type, notice: 'Alert type was successfully updated.' }
+        format.html { redirect_to console_alert_types_url, notice: 'Alert type was successfully updated.' }
         format.json { render action: 'show', status: :ok, location: @alert_type }
       else
         format.html { render action: 'edit' }
@@ -60,7 +60,7 @@ class Console::AlertTypesController < Console::BaseController
   def destroy
     @alert_type.destroy
     respond_to do |format|
-      format.html { redirect_to alert_types_url }
+      format.html { redirect_to console_alert_types_url }
       format.json { head :no_content }
     end
   end
