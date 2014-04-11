@@ -1,0 +1,96 @@
+<div class="container-fluid">
+  <div class="panel panel-default">
+
+    <div class="panel-heading"><h2>Edit User profile </h2></div>
+
+    <div class="panel-body">
+
+      <%= form_for([:console, @user]) do |f| %>
+          <% if @user.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+                <ul>
+                  <% @user.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                  <% end %>
+                </ul>
+              </div>
+          <% end %>
+
+          <h3>User Information</h3><br>
+
+          <div class="form-group">
+            <span style="color:red;padding-right:3px;">*</span>
+            <%= f.label 'First Name' %><br />
+            <%= f.text_field :first_name, :autofocus => true, class: 'form-control', style: 'width:250px;' %></div>
+
+          <div class="form-group">
+            <span style="color:red;padding-right:3px;">*</span>
+            <%= f.label 'Last Name' %><br />
+            <%= f.text_field :last_name, :autofocus => true, class: 'form-control', style: 'width:250px;' %></div>
+
+          <div class="form-group"><%= f.label :title %><br />
+            <%= f.text_field :title, :autofocus => true, class: 'form-control', style: 'width:250px;' %></div>
+
+          <div class="form-group">
+            <span style="color:red;padding-right:3px;">*</span>
+            <%= f.label 'Email' %><br />
+            <%= f.email_field :email, :autofocus => true , :autocomplete => :off, class: 'form-control', style: 'width:250px;'%></div>
+
+          <div class="form-group">
+            <span style="color:red;padding-right:3px;">*</span>
+            <%= f.label 'Agency ORI' %><br />
+            <%= f.text_field :agency_ori, class: 'form-control', style: 'width:250px;' %></div>
+
+          <hr>
+          <h3>Address</h3><br>
+
+          <div class="form-group">
+            <span style="color:red;padding-right:3px;">*</span>
+            <%= f.label 'Address 1' %><br />
+            <%= f.text_field :address1, class: 'form-control', style: 'width:250px;' %></div>
+
+          <div class="form-group"><%= f.label 'Address 2' %><br />
+            <%= f.text_field :address2, class: 'form-control', style: 'width:250px;' %></div>
+
+          <div class="form-group">
+            <span style="color:red;padding-right:3px;">*</span>
+            <%= f.label 'City' %><br />
+            <%= f.text_field :city, class: 'form-control', style: 'width:250px;' %></div>
+
+          <div class="form-group">
+            <span style="color:red;padding-right:3px;">*</span>
+            <%= f.label 'State' %><br />
+            <%= f.text_field :state, class: 'form-control', style: 'width:250px;' %></div>
+
+          <div class="form-group">
+            <span style="color:red;padding-right:3px;">*</span>
+            <%= f.label 'Zip' %><br />
+            <%= f.text_field :zip, class: 'form-control', style: 'width:250px;' %></div>
+
+          <hr>
+          <h3>Contact Information</h3><br>
+
+          <div class="form-group">
+            <span style="color:red;padding-right:3px;">*</span>
+            <%= f.label 'Phone' %><br />
+            <%= f.text_field :phone, class: 'form-control', style: 'width:250px;' %></div>
+
+          <div class="form-group"><%= f.label :alt_phone %><br />
+            <%= f.text_field :alt_phone, class: 'form-control', style: 'width:250px;' %></div>
+
+          <div class="form-group"><%= f.label :fax %><br />
+            <%= f.text_field :fax, class: 'form-control', style: 'width:250px;' %></div>
+
+
+          <div><%= f.submit "Update", :class => 'btn btn-default' %></div>
+      <% end %>
+      <br>
+      <span style="color:red;padding-right:3px;">*</span> indicates a required field
+
+    </div>
+
+  </div>
+
+</div>

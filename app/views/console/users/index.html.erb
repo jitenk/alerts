@@ -1,0 +1,33 @@
+<div class="container">
+
+  <h3>User</h3><br>
+
+  <div class="container">
+
+    <% if @users.count > 0 %>
+        <table class="table table-hover table-bordered table-responsive">
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th colspan="3"></th>
+          </tr>
+          </thead>
+
+          <tbody>
+          <% @users.each do |user| %>
+              <tr>
+                <td><%= user.full_name %></td>
+                <td><%= link_to 'Show', console_user_path(user) %></td>
+                <td><%= link_to 'Edit', edit_console_user_path(user) %></td>
+                <td><%= link_to 'Delete', console_user_path(user), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+          <% end %>
+          </tbody>
+        </table>
+    <% else %>
+        <div class="alert alert-danger">No User Found</div>
+    <% end %>
+    <br>
+  </div>
+  <%#= link_to 'New Alert type', new_console_alert_type_path %>
+</div>

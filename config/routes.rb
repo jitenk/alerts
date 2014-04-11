@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'alerts#index'
 
-  get 'request_approval', to: redirect('/request_approval.html')
+  #get 'request_approval', to: redirect('/request_approval.html')
+  #get 'home', to: redirect('/')
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -20,7 +21,7 @@ Rails.application.routes.draw do
   resources :alerts
 
   namespace :console do
-    resources :alert_types, :questions
+    resources :alert_types, :questions, :users
   end
 
   # Example resource route with options:

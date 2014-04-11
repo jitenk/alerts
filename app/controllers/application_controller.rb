@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_filter :update_sanitized_params, if: :devise_controller?
-  before_filter :current_user_is_approved
   layout :layout_by_resource
 
   def set_mailer_host
@@ -17,12 +16,6 @@ class ApplicationController < ActionController::Base
       "devise"
     else
       "application"
-    end
-  end
-
-  def current_user_is_approved
-    unless current_user && current_user.approved
-      render text: "SOC will notify you once you have been approved.".html_safe, :layout => false
     end
   end
 
