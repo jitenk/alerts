@@ -1,4 +1,4 @@
-class AlertTypesController < ApplicationController
+class Console::AlertTypesController < Console::BaseController
   before_action :set_alert_type, only: [:show, :edit, :update, :destroy]
 
   before_filter :authenticate_user!

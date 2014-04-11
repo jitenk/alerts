@@ -1,4 +1,4 @@
-class QuestionsController < ApplicationController
+class Console::QuestionsController < Console::BaseController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
 
   before_filter :authenticate_user!

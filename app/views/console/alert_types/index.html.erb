@@ -17,9 +17,9 @@
     <% @alert_types.each do |alert_type| %>
       <tr>
         <td><%= alert_type.name %></td>
-        <td><%= link_to 'Show', alert_type %></td>
-        <td><%= link_to 'Edit', edit_alert_type_path(alert_type) %></td>
-        <td><%= link_to 'Delete', alert_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', console_alert_type_path(alert_type) %></td>
+        <td><%= link_to 'Edit', edit_console_alert_type_path(alert_type) %></td>
+        <td><%= link_to 'Delete', console_alert_type_path(alert_type), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -29,5 +29,5 @@
 <% end %>
 <br>
 </div>
-  <%= link_to 'New Alert type', new_alert_type_path %>
+  <%= link_to 'New Alert type', new_console_alert_type_path %>
 </div>
