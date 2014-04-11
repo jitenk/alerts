@@ -60,11 +60,6 @@ class Console::UsersController < Console::BaseController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-    if current_user.email == params[:user][:email]
-      flash[:error] = "You cannot delete your own profile"
-      redirect_to console_users_url
-      return
-    end
 
     @user.destroy
     respond_to do |format|

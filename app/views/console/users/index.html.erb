@@ -22,14 +22,26 @@
           <tbody>
           <% @users.each do |user| %>
               <tr>
-                <td><%=link_to user.full_name, edit_console_user_path(user) %></td>
+                <%if current_user.email == user.email%>
+                    <td><%=user.full_name %></td>
+                <%else%>
+                    <td><%=link_to user.full_name, edit_console_user_path(user) %></td>
+                <%end%>
+
                 <td><%= user.email %></td>
                 <td><%= user.agency_ori %></td>
                 <td><%= user.admin ? 'Yes' : 'No' %></td>
                 <td><%= user.approved ? 'Yes' : 'No' %></td>
                 <!--<td><%#= link_to 'Show', console_user_path(user) %></td>-->
                 <!--<td><%#= link_to 'Edit', edit_console_user_path(user) %></td>-->
-                <td><%= link_to 'Delete', console_user_path(user), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+                <%if current_user.email == user.email%>
+                    <td> </td>
+                <%else%>
+                    <td><%= link_to 'Delete', console_user_path(user), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <%end%>
+
+
               </tr>
           <% end %>
           </tbody>
