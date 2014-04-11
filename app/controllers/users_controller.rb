@@ -4,7 +4,7 @@ class Console::UsersController < Console::BaseController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.order('approved ASC').page(params[:page]).per(50)
   end
 
   # GET /users/1

@@ -30,6 +30,7 @@ gem "devise", "~> 3.2.3"
 gem "bcrypt-ruby", "~> 3.1.5"
 gem "nested_form"
 gem "recaptcha", :require => "recaptcha/rails"
+gem 'kaminari', '~> 0.15.1'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
