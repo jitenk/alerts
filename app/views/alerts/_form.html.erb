@@ -56,8 +56,8 @@
           date time location
           <!--Date/Time/location here-->
         </div>
-        <div class="tab-pane fade" id="Suspect">
-          suspect here
+        <div class="tab-pane fade" id="Suspect"><br>
+          <%= render :partial => "suspect", :locals => {:f => f }%>
          <!--Suspect here-->
         </div>
         <div class="tab-pane fade" id="Vehicle">
