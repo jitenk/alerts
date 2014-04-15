@@ -51,7 +51,7 @@ p {
 
 .nav>li>a:hover, .nav>li>a:focus {
     text-decoration: none;
-    background-color: darkgrey;
-}
+    background-color: #f5f5f5;
+    color: #000000;
 
 

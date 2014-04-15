@@ -1,0 +1,95 @@
+<%= f.fields_for :victims do |builder|%>
+    <div class="panel panel-default">
+      <div class="panel-heading">Victim</div>
+      <div class="panel-body">
+        <form role="form">
+
+          <div class="row">
+            <div class="form-group col-md-3">
+              <%= builder.label :first_name%><br>
+              <%= builder.text_field :first_name, class:'form-control input-normal' %>
+            </div>
+            <div class="form-group col-md-3">
+              <%= builder.label :last_name %><br>
+              <%= builder.text_field :last_name, class:'form-control' %>
+            </div>
+            <div class="form-group col-md-3">
+              <%= builder.label :race %><br>
+              <%= builder.text_field :race, class:'form-control' %>
+            </div>
+            <div class="form-group col-md-3">
+              <%= builder.label :gender %><br>
+               <%= builder.text_field :gender, class:'form-control' %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-3">
+              <%= builder.label :hair_color%><br>
+              <%= builder.text_field :hair_color, class:'form-control input-normal' %>
+            </div>
+            <div class="form-group col-md-3">
+              <%= builder.label :eye_color %><br>
+              <%= builder.text_field :eye_color, class:'form-control' %>
+            </div>
+            <div class="form-group col-md-3">
+              <%= builder.label 'Height' %><br>
+              <div class="input-group">
+              <%= builder.text_field :height_ft, class:'form-control' %>
+              <span class="input-group-addon">Feet(s)</span>
+              </div>
+            </div>
+            <div class="form-group col-md-3">
+              <%= builder.label 'Height' %><br>
+              <div class="input-group">
+              <%= builder.text_field :height_inch, class:'form-control' %>
+                <span class="input-group-addon">Inch(es)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-3">
+              <%= builder.label :age%><br>
+              <%= builder.text_field :age, class:'form-control input-normal' %>
+            </div>
+            <div class="form-group col-md-3">
+              <%= builder.label :age_unit %><br>
+              <%= builder.text_field :age_unit, class:'form-control' %>
+            </div>
+            <div class="form-group col-md-3">
+              <%= builder.label :birth_date %><br>
+              <div class="input-group">
+                      <%= builder.text_field :birth_date, class:'form-control', id:'date'%>
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-calendar" id="date"></i></span>
+              </div>
+            </div>
+            <div class="form-group col-md-3">
+              <%= builder.label :weight %><br>
+              <div class="input-group">
+                <%= builder.text_field :weight, class:'form-control' %>
+                <span class="input-group-addon">Lbs</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-6">
+              <%= builder.label 'file'%><br>
+              <%= builder.file_field 'test', class:'form-control input-normal' %>
+            </div>
+
+          </div>
+
+
+          <div class="row">
+            <div class="col-md-12">
+              <%= builder.link_to_remove "Remove Victim" %>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+<% end %>
+<%= f.link_to_add "Add Victim", :victims %>
