@@ -9,5 +9,6 @@ class Alert < ActiveRecord::Base
   accepts_nested_attributes_for :suspects,
                                 :allow_destroy => true,
                                 :reject_if => lambda {|a| a[:full_name].blank?}
+
   belongs_to :alert_type
 end
