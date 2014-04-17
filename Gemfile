@@ -33,6 +33,8 @@ gem "recaptcha", :require => "recaptcha/rails"
 gem 'kaminari', '~> 0.15.1'
 gem 'jquery-ui-rails'
 
+gem 'rails_12factor', group: :production
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
