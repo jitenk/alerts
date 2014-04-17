@@ -60,7 +60,7 @@
             <div class="form-group col-md-3">
               <%= builder.label :birth_date %><br>
               <div class="input-group">
-                      <%= builder.date_field :birth_date, class:'form-control'%>
+                      <%= builder.date_field :birth_date, max: Date.today, class:'form-control'%>
                       <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
               </div>
             </div>
