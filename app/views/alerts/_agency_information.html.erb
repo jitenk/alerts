@@ -1,0 +1,57 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Agency Information</div>
+  <div class="panel-body">
+    <form role="form">
+
+      <div class="row">
+        <div class="form-group col-md-6">
+          <%= f.label :created_at%><br>
+          <%= f.datetime_local_field :created_at, class:'form-control input-normal' %>
+        </div>
+        <div class="form-group col-md-6">
+          <%= f.label :nic%><br>
+          <%= f.text_field :nic, class:'form-control input-normal' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-4">
+          <%= f.label :investigating_officer_name%><br>
+          <%= f.text_field :investigating_officer_name, class:'form-control input-normal' %>
+        </div>
+        <div class="form-group col-md-4">
+          <%= f.label :investigating_officer_title %><br>
+          <%= f.text_field :investigating_officer_title, class:'form-control' %>
+        </div>
+        <div class="form-group col-md-4">
+          <%= f.label :investigating_officer_phone %><br>
+          <%= f.text_field :investigating_officer_phone, class:'form-control' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-6">
+          <%= f.label :agency_name, 'Agency Name (Displayed on Flyer)'%><br>
+          <%= f.text_field :agency_name, class:'form-control input-normal' %>
+        </div>
+        <div class="form-group col-md-6">
+          <%= f.label :agency_phone, '24 Hour Agency Phone (Displayed on Flyer)' %><br>
+          <%= f.text_field :agency_phone, class:'form-control' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-6">
+          <%= f.label :reporting_agency_phone%><br>
+          <%= f.text_field :reporting_agency_phone, class:'form-control input-normal' %>
+        </div>
+        <div class="form-group col-md-6">
+          <%= f.label :reporting_agency_email %><br>
+          <%= f.text_field :reporting_agency_email, class:'form-control' %>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+</div>

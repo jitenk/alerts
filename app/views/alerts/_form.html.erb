@@ -40,12 +40,12 @@
          <%= render :partial => "victim", :locals => {:f => f }%>
           <!--Victim Tab here-->
         </div>
-        <div class="tab-pane fade" id="AgencyInformation">
-
+        <div class="tab-pane fade" id="AgencyInformation"><br>
+          <%= render :partial => "agency_information", :locals => {:f => f }%>
             <!--Agency Information here-->
         </div>
-        <div class="tab-pane fade" id="Date_time_location">
-
+        <div class="tab-pane fade" id="Date_time_location"><br>
+          <%= render :partial => "date_time_location", :locals => {:f => f }%>
           <!--Date/Time/location here-->
         </div>
         <div class="tab-pane fade" id="Suspect"><br>
@@ -62,7 +62,7 @@
         <div class="tab-pane fade" id="Distribution">
           <!--distribution here-->
         </div>
-      </div> <br><br>
+      </div> <br>
 
       <div class="actions">
         <%= f.submit class:'btn btn-default'%>

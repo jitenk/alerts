@@ -1,0 +1,52 @@
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Date/Time/Location</div>
+      <div class="panel-body">
+        <form role="form">
+
+          <div class="row">
+            <div class="form-group col-md-6">
+              <%= f.label :last_seen%><br>
+              <%= f.datetime_local_field :last_seen, class:'form-control input-normal' %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-6">
+              <%= f.label :last_known_address%><br>
+              <%= f.text_field :last_known_address, class:'form-control input-normal' %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-3">
+              <%= f.label :last_known_city%><br>
+              <%= f.text_field :last_known_city, class:'form-control input-normal' %>
+            </div>
+            <div class="form-group col-md-3">
+              <%= f.label :last_known_state %><br>
+              <%= f.text_field :last_known_state, class:'form-control' %>
+            </div>
+            <div class="form-group col-md-3">
+              <%= f.label :last_known_county %><br>
+              <%= f.text_field :last_known_county, class:'form-control' %>
+            </div>
+            <div class="form-group col-md-3">
+              <%= f.label :last_known_zip %><br>
+              <%= f.text_field :last_known_zip, class:'form-control' %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-12">
+              <%= f.label :site_of_incident, 'Site of Incident' %><br>
+              <%= f.text_area :site_of_incident, class:'form-control input-normal', style:'resize:none;', :rows => "3" %>
+            </div>
+          </div>
+
+
+        </form>
+
+      </div>
+    </div>
+
