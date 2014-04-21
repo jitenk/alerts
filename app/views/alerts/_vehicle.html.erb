@@ -1,0 +1,68 @@
+<%= f.fields_for :vehicles do |builder|%>
+    <div class="panel panel-default">
+      <div class="panel-heading">Suspect</div>
+      <div class="panel-body">
+        <form role="form">
+
+          <div class="row">
+            <div class="form-group col-md-3">
+              <%= builder.label :make%><br>
+              <%= builder.text_field :make, class:'form-control input-normal' %>
+            </div>
+            <div class="form-group col-md-3">
+              <%= builder.label :model %><br>
+              <%= builder.text_field :model, class:'form-control' %>
+            </div>
+            <div class="form-group col-md-3">
+              <%= builder.label :style %><br>
+              <%= builder.text_field :style, class:'form-control' %>
+            </div>
+            <div class="form-group col-md-3">
+              <%= builder.label :year %><br>
+              <%= builder.text_field :year, class:'form-control' %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-3">
+              <%= builder.label :color%><br>
+              <%= builder.text_field :color, class:'form-control input-normal' %>
+            </div>
+            <div class="form-group col-md-3">
+              <%= builder.label :license_plate_number %><br>
+              <%= builder.text_field :license_plate_number, class:'form-control' %>
+            </div>
+            <div class="form-group col-md-3">
+              <%= builder.label :license_plate_state %><br>
+              <%= builder.text_field :license_plate_state, class:'form-control' %>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-12">
+              <%= builder.label :additional_info, 'Additional Information' %><br>
+              <%= builder.text_area :additional_info, class:'form-control input-normal' %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-6">
+              <%= builder.label 'Image(s)'%><br>
+              <%= builder.file_field 'test', class:'form-control input-normal' %>
+            </div>
+
+          </div>
+
+
+          <div class="row">
+            <div class="col-md-12">
+              <%= builder.link_to_remove "Remove Vehicle" %>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+<% end %>
+<%= f.link_to_add "Add Vehicles", :vehicles %>
