@@ -22,6 +22,8 @@
                   </div>
                 <%end%>
 
+                    <span style="color:red;padding-right:3px;">*</span> indicates a required field
+
                   <h3>User Information</h3><br>
 
                   <div class="form-group">
@@ -55,7 +57,7 @@
 
                   <div class="form-group">
                     <span style="color:red;padding-right:3px;">*</span>
-                    <%= f.label 'Agency ORI' %><br />
+                    <%= f.label :agency_ori, 'Agency ORI' %><br />
                   <%= f.text_field :agency_ori, class: 'form-control', style: 'width:250px;' %></div>
 
                     <hr>
@@ -122,8 +124,6 @@
                 <% end %>
 
                 <%= render "devise/shared/links" %> <br>
-
-                <span style="color:red;padding-right:3px;">*</span> indicates a required field
 
               </div>
 
