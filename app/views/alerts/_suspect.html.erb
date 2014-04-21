@@ -74,8 +74,15 @@
           </div>
 
           <div class="row">
+            <div class="form-group col-md-12">
+              <%= builder.label :additional_info, 'Additional Information' %><br>
+              <%= builder.text_area :additional_info, class:'form-control input-normal' %>
+            </div>
+          </div>
+
+          <div class="row">
             <div class="form-group col-md-6">
-              <%= builder.label 'file'%><br>
+              <%= builder.label 'Image(s)'%><br>
               <%= builder.file_field 'test', class:'form-control input-normal' %>
             </div>
 
