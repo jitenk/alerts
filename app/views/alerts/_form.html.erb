@@ -10,6 +10,11 @@
             step:15
         });
 
+        $('#alert_last_seen').datetimepicker({
+            mask:'9999/19/39 29:59',
+            step:15
+        });
+
          $(document).on('nested:fieldAdded', function(event){
              $('.birthdate').datetimepicker({
                  format:'m/d/Y',
