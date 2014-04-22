@@ -11,10 +11,11 @@
         });
 
          $(document).on('nested:fieldAdded', function(event){
-             $('.datepicker').datetimepicker({
+             $('.birthdate').datetimepicker({
                  format:'m/d/Y',
                  timepicker:false,
-                 mask:true
+                 mask:true,
+                 maxDate:0
              });
             event.preventDefault();
          })
