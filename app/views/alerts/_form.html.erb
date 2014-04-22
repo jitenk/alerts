@@ -4,6 +4,32 @@
             e.preventDefault()
             $(this).tab('show')
         })
+
+        $('#alert_created_at').datetimepicker({
+            mask:'9999/19/39 29:59',
+            step:15
+        });
+
+         $(document).on('nested:fieldAdded', function(event){
+             $('.datepicker').datetimepicker({
+                 format:'m/d/Y',
+                 timepicker:false,
+                 mask:true
+             });
+            event.preventDefault();
+         })
+
+       /* $(document).on('nested:fieldAdded', function(event){
+            // this field was just inserted into your form
+            var field = event.field;
+            // it's a jQuery object already! Now you can find date input
+            var dateField = field.find('.datepicker');
+            // and activate datepicker on it
+            dateField.datetimepicker({
+                timepicker:false
+            });
+            event.preventDefault();
+        })*/
     })
 </script>
 
