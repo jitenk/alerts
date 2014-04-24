@@ -6,11 +6,11 @@
 
           <div class="row">
             <div class="form-group col-md-3">
-              <%= builder.label :first_name%><br>
+              <%= builder.label :first_name, 'First Name'%><br>
               <%= builder.text_field :first_name, class:'form-control input-normal' %>
             </div>
             <div class="form-group col-md-3">
-              <%= builder.label :last_name %><br>
+              <%= builder.label :last_name, 'Last Name' %><br>
               <%= builder.text_field :last_name, class:'form-control' %>
             </div>
             <div class="form-group col-md-3">
@@ -25,11 +25,11 @@
 
           <div class="row">
             <div class="form-group col-md-3">
-              <%= builder.label :hair_color%><br>
+              <%= builder.label :hair_color, 'Hair Color' %><br>
               <%= builder.text_field :hair_color, class:'form-control input-normal' %>
             </div>
             <div class="form-group col-md-3">
-              <%= builder.label :eye_color %><br>
+              <%= builder.label :eye_color, 'Eye Color' %><br>
               <%= builder.text_field :eye_color, class:'form-control' %>
             </div>
             <div class="form-group col-md-3">
@@ -54,11 +54,11 @@
               <%= builder.text_field :age, class:'form-control input-normal' %>
             </div>
             <div class="form-group col-md-3">
-              <%= builder.label :age_unit %><br>
+              <%= builder.label :age_unit, 'Age Unit' %><br>
               <%= builder.text_field :age_unit, class:'form-control' %>
             </div>
             <div class="form-group col-md-3">
-              <%= builder.label :birth_date %><br>
+              <%= builder.label :birth_date, 'Birth Date' %><br>
               <div class="input-group">
                       <%= builder.text_field :birth_date, max: Date.today, class:'form-control birthdate'%>
                       <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
