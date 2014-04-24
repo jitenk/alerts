@@ -17,6 +17,14 @@
             closeOnDateSelect:true
         });
 
+        $('.birthdate').datetimepicker({
+            format:'m/d/Y',
+            timepicker:false,
+            mask:true,
+            maxDate:0,
+            closeOnDateSelect:true
+        });
+
          $(document).on('nested:fieldAdded', function(event){
              $('.birthdate').datetimepicker({
                  format:'m/d/Y',
@@ -95,13 +103,14 @@
           <!--additional information here-->
         <!--</div>-->
         <div class="tab-pane fade" id="Distribution">
-          <!--distribution here-->
+          <!--distribution here--> <br><br>
+        </div>
+        <div class="actions">
+          <%= f.submit class:'btn btn-default'%>
         </div>
       </div> <br>
 
-      <div class="actions">
-        <%= f.submit class:'btn btn-default'%>
-      </div>
+
 
 
 <% end %>

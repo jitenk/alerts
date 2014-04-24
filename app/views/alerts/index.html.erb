@@ -9,7 +9,8 @@
         <table class="table table-hover table-bordered table-responsive">
           <thead>
           <tr>
-            <th>Name</th>
+            <th>Victim(s) Name</th>
+            <th>Suspect(s) Name</th>
             <th colspan="3"></th>
           </tr>
           </thead>
@@ -17,10 +18,11 @@
           <tbody>
           <% @alerts.each do |alert| %>
               <tr>
-                <td><%= alert.name %></td>
-                <td><%= link_to 'Show', alert_type %></td>
-                <td><%= link_to 'Edit', edit_alert_type_path(alert_type) %></td>
-                <td><%= link_to 'Delete', alert_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td><%= alert.victims_names %></td>
+                <td><%= alert.suspects_names %></td>
+                <td><%#= link_to 'Show', alert_path(alert) %></td>
+                <td><%= link_to 'Edit', edit_alert_path(alert) %></td>
+                <td><%= link_to 'Delete', alert_path(alert), method: :delete, data: { confirm: 'Are you sure?' } %></td>
               </tr>
           <% end %>
           </tbody>

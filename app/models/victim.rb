@@ -1,8 +1,11 @@
 class Victim < Person
 
+  before_save :set_type
+
   belongs_to :alert
 
-  def type=(type)
-    write_attribute(:type, 'victim')
+  def set_type
+    self.type = 'victim'
   end
+
 end
