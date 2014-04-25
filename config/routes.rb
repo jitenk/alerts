@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   resources :people
   resources :victims, controller: 'people', type: 'victims'
   resources :suspects, controller: 'people', type: 'suspects'
+  resources :vehicles
 
   namespace :console do
     resources :alert_types, :questions, :users

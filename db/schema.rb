@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(version: 20140424201344) do
     t.integer  "alert_id"
   end
 
+  add_index "people", ["alert_id"], name: "index_people_on_alert_id", using: :btree
+
   create_table "questions", force: true do |t|
     t.integer  "order"
     t.text     "detail"
@@ -121,5 +123,7 @@ ActiveRecord::Schema.define(version: 20140424201344) do
     t.text     "additional_info"
     t.integer  "alert_id"
   end
+
+  add_index "vehicles", ["alert_id"], name: "index_vehicles_on_alert_id", using: :btree
 
 end
