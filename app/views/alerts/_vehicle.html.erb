@@ -2,7 +2,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">Suspect</div>
       <div class="panel-body">
-        <form role="form">
+        <!--<form role="form">-->
 
           <div class="row">
             <div class="form-group col-md-3">
@@ -19,7 +19,7 @@
             </div>
             <div class="form-group col-md-3">
               <%= builder.label :year %><br>
-              <%= builder.text_field :year, class:'form-control' %>
+              <%= builder.select :year, (Time.zone.now.year - 30)..(Time.zone.now.year) %>
             </div>
           </div>
 
@@ -60,7 +60,7 @@
               <%= builder.link_to_remove "Remove Vehicle" %>
             </div>
           </div>
-        </form>
+       <!-- </form>-->
 
       </div>
     </div>
