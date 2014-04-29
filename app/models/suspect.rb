@@ -4,7 +4,7 @@ class Suspect < Person
   belongs_to :alert
 
   def set_type
-    self.type = 'suspect'
+    self.type = 'Suspect'
   end
 
 end

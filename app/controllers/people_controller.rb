@@ -1,6 +1,5 @@
 class PeopleController < ApplicationController
   before_action :set_person, only: [:show, :edit, :update, :destroy]
-  before_action :set_type
 
   # GET /people
   # GET /people.json
@@ -63,18 +62,6 @@ class PeopleController < ApplicationController
   end
 
   private
-
-  def set_type
-    @type = type
-  end
-
-  def type
-    params[:type] || "person"
-  end
-
-  def type_class
-    type.constantize
-  end
 
   def set_person
     @person = type_class.find(params[:id])

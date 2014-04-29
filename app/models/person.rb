@@ -1,7 +1,7 @@
 class Person < ActiveRecord::Base
   belongs_to :alert
 
-  self.inheritance_column = :type
+  #self.inheritance_column = :type
 
   def full_name
     "#{self.first_name} #{self.last_name}"
