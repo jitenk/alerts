@@ -7,9 +7,9 @@ class Person < ActiveRecord::Base
     "#{self.first_name} #{self.last_name}"
   end
 
-  private
-  def attributes_protected_by_default
-    super - [self.class.inheritance_column]
-  end
+  # private
+  # def attributes_protected_by_default
+  #   super - [self.class.inheritance_column]
+  # end
 
 end

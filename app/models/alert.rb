@@ -17,4 +17,12 @@ class Alert < ActiveRecord::Base
 
   belongs_to :alert_type
 
+  def victims_names
+
+  end
+
+  def suspects_names
+
+  end
+
 end
