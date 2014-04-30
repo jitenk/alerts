@@ -34,6 +34,33 @@
                  closeOnDateSelect:true
              });
             event.preventDefault();
+
+             var hair_color = <%= raw Person::HAIR_COLOR.to_json %>;
+             var race = <%= raw Person::RACE.to_json %>;
+             var gender = <%= raw Person::GENDER.to_json %>;
+             var eye_color = <%= raw Person::EYE_COLOR.to_json %>;
+             var age_unit = <%= raw Person::AGE_UNIT.to_json %>;
+
+             $( ".hair_color" ).autocomplete({
+                 source: hair_color
+             });
+
+             $( ".race" ).autocomplete({
+                 source: race
+             });
+
+             $( ".gender" ).autocomplete({
+                 source: gender
+             });
+
+             $( ".eye_color" ).autocomplete({
+                 source: eye_color
+             });
+
+             $( ".age_unit" ).autocomplete({
+                 source: age_unit
+             });
+
          })
 
        /* $(document).on('nested:fieldAdded', function(event){

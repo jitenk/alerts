@@ -17,9 +17,9 @@ class AlertsController < ApplicationController
   # GET /alerts/new
   def new
     @alert = Alert.new
-    @alert.victims.build
-    @alert.suspects.build
-    @alert.vehicles.build
+    # @alert.victims.build
+    # @alert.suspects.build
+    # @alert.vehicles.build
   end
 
   # GET /alerts/1/edit
