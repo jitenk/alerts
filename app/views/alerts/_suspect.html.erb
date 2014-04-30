@@ -1,4 +1,4 @@
-<%= f.fields_for :suspects do |builder|%>
+<%= f.fields_for :suspects, @alert.suspects.order('first_name ASC') do |builder|%>
     <div class="panel panel-default">
       <div class="panel-heading">Suspect</div>
       <div class="panel-body">
