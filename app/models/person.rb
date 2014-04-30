@@ -4,7 +4,7 @@ class Person < ActiveRecord::Base
   #self.inheritance_column = :type
 
   def full_name
-    "#{self.first_name} #{self.last_name}"
+    "#{self.first_name} #{self.last_name}" rescue nil
   end
 
   # private
