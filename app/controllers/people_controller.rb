@@ -71,6 +71,6 @@ class PeopleController < ApplicationController
   end
 
   def person_params
-    params.require(type.underscore.to_sym).permit(:id, :last_name, :first_name, :birth_date, :gender, :hair_color, :height_ft, :height_inch, :weight, :eye_color, :race, :type, :age, :age_unit, :additional_info, :alert_id, images_attributes: [:id, :person_id, :avatar, :primary])
+    params.require(type.underscore.to_sym).permit(:id, :last_name, :first_name, :birth_date, :gender, :hair_color, :height_ft, :height_inch, :weight, :eye_color, :race, :type, :age, :age_unit, :additional_info, :alert_id)
   end
 end
