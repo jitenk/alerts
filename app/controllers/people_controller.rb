@@ -28,6 +28,9 @@ class PeopleController < ApplicationController
 
     respond_to do |format|
       if @person.save
+        params[:images]['avatar'].each do |a|
+          @images = @person.images.create!(:avatar => a, :post_id => @person.id)
+        end
         format.html { redirect_to @person, notice: "#{type} was successfully created." }
         format.json { render :show, status: :created, location: @person }
       else
@@ -68,6 +71,6 @@ class PeopleController < ApplicationController
   end
 
   def person_params
-    params.require(type.underscore.to_sym).permit(:id, :last_name, :first_name, :birth_date, :gender, :hair_color, :height_ft, :height_inch, :weight, :eye_color, :race, :type, :age, :age_unit, :additional_info, :alert_id)
+    params.require(type.underscore.to_sym).permit(:id, :last_name, :first_name, :birth_date, :gender, :hair_color, :height_ft, :height_inch, :weight, :eye_color, :race, :type, :age, :age_unit, :additional_info, :alert_id, images_attributes: [:id, :person_id, :avatar, :primary])
   end
 end

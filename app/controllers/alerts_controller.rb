@@ -17,9 +17,11 @@ class AlertsController < ApplicationController
   # GET /alerts/new
   def new
     @alert = Alert.new
-    # @alert.victims.build
-    # @alert.suspects.build
-    # @alert.vehicles.build
+    @victims = @alert.victims.build
+    @victims.images.build
+    @alert.suspects.build
+    @alert.vehicles.build
+
   end
 
   # GET /alerts/1/edit
@@ -75,8 +77,8 @@ class AlertsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def alert_params
       params.require(:alert).permit(:id, :name, :created_at, :updated_at, :date_requested, :last_seen, :last_known_address, :last_known_city, :last_known_state, :last_known_zip, :last_known_county, :site_of_incident, :nic, :agency_name, :agency_phone, :reporting_agency_phone, :reporting_agency_email, :investigating_officer_name, :investigating_officer_title, :investigating_officer_phone,
-                                    victims_attributes: [:id, :last_name, :first_name, :birth_date, :gender, :hair_color, :height_ft, :height_inch, :weight, :eye_color, :race, :type, :age, :age_unit, :additional_info, :alert_id, :_destroy],
-                                    suspects_attributes: [:id, :last_name, :first_name, :birth_date, :gender, :hair_color, :height_ft, :height_inch, :weight, :eye_color, :race, :type, :age, :age_unit, :additional_info, :alert_id, :_destroy],
+                                    victims_attributes: [:id, :last_name, :first_name, :birth_date, :gender, :hair_color, :height_ft, :height_inch, :weight, :eye_color, :race, :type, :age, :age_unit, :additional_info, :alert_id, :_destroy, images_attributes: [:id, :person_id, :avatar, :primary]],
+                                    suspects_attributes: [:id, :last_name, :first_name, :birth_date, :gender, :hair_color, :height_ft, :height_inch, :weight, :eye_color, :race, :type, :age, :age_unit, :additional_info, :alert_id, :_destroy, images_attributes: [:id, :person_id, :avatar, :primary]],
                                     vehicles_attributes: [:id, :make, :model, :style, :year, :color, :license_plate_number, :license_plate_state, :additional_info, :alert_id, :_destroy])
     end
 end

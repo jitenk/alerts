@@ -81,7 +81,7 @@
   <div class="row clearfix">
     <div class="col-md-12 column">
 
-    <%= nested_form_for(@alert) do |f| %>
+    <%= nested_form_for(@alert, :html => { :multipart => true }) do |f| %>
       <% if @alert.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@alert.errors.count, "error") %> prohibited this alert from being saved:</h2>

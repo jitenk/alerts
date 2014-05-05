@@ -32,6 +32,7 @@ gem "nested_form"
 gem "recaptcha", :require => "recaptcha/rails"
 gem 'kaminari', '~> 0.15.1'
 gem 'jquery-ui-rails'
+gem 'carrierwave'
 
 #show STDOUT on papertrail
 gem 'rails_12factor', group: :production

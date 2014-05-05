@@ -1,4 +1,4 @@
-<%= f.fields_for :victims, @alert.victims.order('first_name ASC') do |builder|%>
+<%= f.fields_for :victims do |builder|%>
     <div class="panel panel-default">
       <div class="panel-heading">Victim</div>
       <div class="panel-body">
@@ -72,20 +72,23 @@
             </div>
           </div>
 
-          <div class="row">
+
+        <div class="row">
             <div class="form-group col-md-12">
               <%= builder.label :additional_info, 'Additional Information' %><br>
               <%= builder.text_area :additional_info, class:'form-control input-normal', style:'resize:none;', :rows => "3" %>
             </div>
           </div>
 
-          <div class="row">
-            <div class="form-group col-md-6">
-              <%= builder.label 'Image(s)'%><br>
-              <%= builder.file_field 'test', class:'form-control input-normal' %>
-            </div>
 
+        <%= builder.fields_for :images do |p| %>
+        <div class="row">
+            <div class="form-group col-md-6">
+              <%= p.label 'Image(s)'%><br>
+              <%= p.file_field :avatar, :multiple => true, class:'form-control input-normal' %>
+            </div>
           </div>
+        <% end %>
 
           <div class="row">
             <div class="col-md-12">

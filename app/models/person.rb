@@ -1,6 +1,10 @@
 class Person < ActiveRecord::Base
   belongs_to :alert
 
+  has_many :images, :dependent => :destroy
+  accepts_nested_attributes_for :images, :allow_destroy => true
+
+
   GENDER = ['Male','Female','Unknown']
   HAIR_COLOR = ['Bald', 'Black', 'Blonde', 'Brown', 'Gray', 'Red or Auburn', 'Green', 'Multicolored', 'Orange', 'Pink', 'Purple', 'Sandy', 'White', 'Unknown']
   EYE_COLOR = ['Black', 'Blue', 'Brown', 'Green', 'Hazel', 'Gray', 'Maroon', 'Multicolored', 'Pink', 'Unknown']
