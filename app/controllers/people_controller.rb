@@ -28,9 +28,6 @@ class PeopleController < ApplicationController
 
     respond_to do |format|
       if @person.save
-        params[:images]['avatar'].each do |a|
-          @images = @person.images.create!(:avatar => a, :post_id => @person.id)
-        end
         format.html { redirect_to @person, notice: "#{type} was successfully created." }
         format.json { render :show, status: :created, location: @person }
       else
